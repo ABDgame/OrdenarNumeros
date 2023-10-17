@@ -9,11 +9,15 @@ let board = document.querySelector('.board');
 function drawTokens(){
   matrix.forEach(row => row.forEach(element
   => {
-    board.innerHTML += `<div class='token'>$
-    {element}</div>`
+    if(element == ''){
+     board.innerHTML += `<div class='empty'>$
+    {element}</div>` 
+    }else{
+     board.innerHTML += `<div class='token'>$
+    {element}</div>` 
+    } 
   }))
 }
-
 drawTokens()
 
 
