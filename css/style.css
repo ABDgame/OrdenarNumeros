@@ -16,7 +16,6 @@ body
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  
 }
 .board
 {
@@ -25,7 +24,7 @@ body
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4px;
   width: 310px;
-  margin: 120px auto ;
+  margin: 120px auto;
 }
 .token
 {
