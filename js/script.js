@@ -27,5 +27,9 @@ function drawTokens(){
 function addEventListeners(){
   let tokens = document.querySelectorAll('.
   token')
+  tokens.forEach(token => token.
+  addEventListener('click', ()=>{
+    console.log('Se hizo clic')
+  }))
 }
 
