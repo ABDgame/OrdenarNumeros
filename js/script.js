@@ -6,6 +6,10 @@ let matrix = [
 
 let board = document.querySelector('.board');
 
+drawTokens()
+addEventListeners()
+
+
 function drawTokens(){
   matrix.forEach(row => row.forEach(element
   => {
@@ -18,7 +22,10 @@ function drawTokens(){
     } 
   }))
 }
-drawTokens()
 
 
+function addEventListeners(){
+  let tokens = document.querySelectorAll('.
+  token')
+}
 
