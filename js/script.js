@@ -11,8 +11,7 @@ addEventListeners()
 
 
 function drawTokens(){
-  matrix.forEach(row => row.forEach(element
-  => {
+  matrix.forEach(row => row.forEach(element=> {
     if(element == ''){
      board.innerHTML += `<div class='empty'>$
     {element}</div>` 
@@ -25,11 +24,10 @@ function drawTokens(){
 
 
 function addEventListeners(){
-  let tokens = document.querySelectorAll('.
-  token')
+  let tokens = document.querySelectorAll('.token')
   tokens.forEach(token => token.
   addEventListener('click', ()=>{
-    console.log('Se hizo clic')
+    
   }))
 }
 
