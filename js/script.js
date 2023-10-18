@@ -13,11 +13,11 @@ addEventListeners()
 function drawTokens(){
   matrix.forEach(row => row.forEach(element=> {
     if(element == ''){
-     board.innerHTML += `<div class='empty'>$
-    {element}</div>` 
+       board.innerHTML += `<div class='empty'>
+       ${element}</div>` 
     }else{
-     board.innerHTML += `<div class='token'>$
-    {element}</div>` 
+     board.innerHTML += `<div class='token'>
+     ${element}</div>` 
     } 
   }))
 }
