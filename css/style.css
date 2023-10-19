@@ -20,7 +20,7 @@ body
 }
 .board
 {
-  border: 1px solid red;
+  border: 1px solid transparent;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4px;
