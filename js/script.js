@@ -30,15 +30,21 @@ function addEventListeners(){
   addEventListener('click', ()=>{
     let actualPosition = searchPosition(token.innerText)
 
-
   }))
 }
 
 function searchPosition(element){
+  let rowIndex = 0;
+  let columIndex = 0;
   matrix.forEach((row, index) => {
      let rowElement = row.findIndex(item =>
      item == element)
+     if(rowElement !== -1){
+       rowIndex = index;
+       columIndex = rowElement;
+     }
   })
+  return [rowIndex, columIndex]
 }
 
 
