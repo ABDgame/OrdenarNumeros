@@ -29,6 +29,8 @@ function addEventListeners(){
   tokens.forEach(token => token.
   addEventListener('click', ()=>{
     let actualPosition = searchPosition(token.innerText)
+    let emptyPosition = searchPosition('')
+    let movement = nextMovement(actualPosition, emptyPosition)
 
   }))
 }
@@ -46,5 +48,8 @@ function searchPosition(element){
   })
   return [rowIndex, columIndex]
 }
+function nextMovement(actualPosition, emptyPosition){
+  console.log(actualPosition[0]-emptyPosition[0])
 
+}
 
