@@ -1,7 +1,7 @@
 let matrix = [
   ['1', '2', '3'],
   ['4', '5', '6'],
-  ['7', '8', ''],
+  ['7', '', '8'],
 ]
 
 let board = document.querySelector('.board');
@@ -49,7 +49,24 @@ function searchPosition(element){
   return [rowIndex, columIndex]
 }
 function nextMovement(actualPosition, emptyPosition){
-  console.log(actualPosition[0]-emptyPosition[0])
+  if(actualPosition[1]== emptyPosition[1]){
+    if(actualPosition[0]-emptyPosition[0] ==-1){
+      console.log('abaixo')
+    }else if(actualPosition[0]-emptyPosition[0]==1){
+      console.log('acima')
+    }
+  }else if(actualPosition[0]== emptyPosition[0]){
+   if(actualPosition[1]-emptyPosition[1]== -1){
+    console.log('direita')
+  } 
+  else if(actualPosition[1]-emptyPosition[1]==1){
+    console.log('esquerda')
+  }
+}else{
+  console.log('sem movimento')
+}
 
+
+  
 }
 
