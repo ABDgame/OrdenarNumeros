@@ -32,6 +32,11 @@ function addEventListeners(){
     let emptyPosition = searchPosition('')
     let movement = nextMovement(actualPosition, emptyPosition)
 
+    if (movement !== 'noMOVE'){
+      updateMatrix(token.innerText, actualPosition, emptyPosition)
+    }
+    
+
   }))
 }
 
@@ -51,22 +56,25 @@ function searchPosition(element){
 function nextMovement(actualPosition, emptyPosition){
   if(actualPosition[1]== emptyPosition[1]){
     if(actualPosition[0]-emptyPosition[0] ==-1){
-      console.log('abaixo')
+      return 'down'
     }else if(actualPosition[0]-emptyPosition[0]==1){
-      console.log('acima')
+      return 'up'
     }
   }else if(actualPosition[0]== emptyPosition[0]){
    if(actualPosition[1]-emptyPosition[1]== -1){
-    console.log('direita')
+     return 'right'
   } 
   else if(actualPosition[1]-emptyPosition[1]==1){
-    console.log('esquerda')
+     return 'left'
+    }
+  }else{
+     return 'noMOVE'
   }
-}else{
-  console.log('sem movimento')
 }
 
-
-  
+function updateMatrix(element, actualPosition,
+  emptyPosition){
+   matrix[actualPosition[0]][actualPosition[1]] = ''
+   matrix[emptyPosition[0]][emptyPosition[1]] = element
+   console.log(matrix)
 }
-
