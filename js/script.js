@@ -30,12 +30,12 @@ function addEventListeners(){
   addEventListener('click', ()=>{
     let actualPosition = searchPosition(token.innerText)
     let emptyPosition = searchPosition('')
-    let movement = nextMovement(actualPosition, emptyPosition)
+    let movement = canItMove(actualPosition, emptyPosition)
 
-    if (movement !== 'noMOVE'){
+    if (movement !== false){
       updateMatrix(token.innerText, actualPosition, emptyPosition)
+      
     }
-    
 
   }))
 }
@@ -53,22 +53,37 @@ function searchPosition(element){
   })
   return [rowIndex, columIndex]
 }
-function nextMovement(actualPosition, emptyPosition){
+
+function canItMove(actualPosition, emptyPosition){
+
   if(actualPosition[1]== emptyPosition[1]){
-    if(actualPosition[0]-emptyPosition[0] ==-1){
-      return 'down'
-    }else if(actualPosition[0]-emptyPosition[0]==1){
-      return 'up'
+
+    if(actualPosition[0]-emptyPosition[0] > 1 ||
+      actualPosition[0]-emptyPosition[0] <-1){
+        return false
     }
+    //if(actualPosition[0]-emptyPosition[0] ==-1){
+      //return 'down'
+    //}else if(actualPosition[0]-emptyPosition[0]==1){
+      //return 'up'
+    //}else{
+     //return 'noMOVE'
+    //}
   }else if(actualPosition[0]== emptyPosition[0]){
-   if(actualPosition[1]-emptyPosition[1]== -1){
-     return 'right'
-  } 
-  else if(actualPosition[1]-emptyPosition[1]==1){
-     return 'left'
+
+    if(actualPosition[1]-emptyPosition[1] > 1 ||
+      actualPosition[1]-emptyPosition[1] <-1){
+        return false
     }
+   //if(actualPosition[1]-emptyPosition[1]== -1){
+     //return 'right'
+  //}else if(actualPosition[1]-emptyPosition[1]==1){
+    // return 'left'
+    //}else{
+   //  return 'noMOVE'
+   // }
   }else{
-     return 'noMOVE'
+     return false
   }
 }
 
@@ -76,5 +91,6 @@ function updateMatrix(element, actualPosition,
   emptyPosition){
    matrix[actualPosition[0]][actualPosition[1]] = ''
    matrix[emptyPosition[0]][emptyPosition[1]] = element
+
    console.log(matrix)
 }
