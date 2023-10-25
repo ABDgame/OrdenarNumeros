@@ -1,8 +1,4 @@
-let matrix = [
-  ['1', '2', '3'],
-  ['4', '5', '6'],
-  ['7', '', '8'],
-]
+let matrix = shuffleMatrix()
 
 let board = document.querySelector('.board');
 
@@ -94,3 +90,32 @@ function updateMatrix(element, actualPosition,
 
    console.log(matrix)
 }
+
+function shuffleMatrix(){
+   let shuffleMatrix = [
+     [],
+     [],
+     []
+   ]
+
+
+   let array = ['1', '2', '3', '4', '5', '6','7', '8', '']
+   let shufleArray = array.sort(()=> Math.random()-0.5)
+
+   let column = 0;
+   let row = 0;
+   
+
+   shufleArray.forEach(element => {
+     shuffleMatrix[row].push(element)
+     if(column < 2) {
+        column++
+     }else{
+       column = 0
+       row++
+     }
+         
+   })
+   return shuffleMatrix
+}
+
