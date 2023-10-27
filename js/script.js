@@ -39,7 +39,7 @@ function addEventListeners(){
 
       if(result === true){
         confetti({
-          particleCount: 150,
+          particleCount: 3000,
           spread: 180
         });
       }
