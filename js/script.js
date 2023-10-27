@@ -1,4 +1,9 @@
-let matrix = shuffleMatrix()
+//let matrix = shuffleMatrix()
+  let matrix = finalMatrix = [
+    ['1','2','3'],
+    ['4','5','6'],
+    ['7','','8'],
+  ]
 
 let board = document.querySelector('.board');
 
@@ -29,6 +34,8 @@ function addEventListeners(){
 
     if (movement !== false){
       updateMatrix(token.innerText, actualPosition, emptyPosition)
+      let result = compareMatrix()
+      
       drawTokens()
       addEventListeners()
     }
@@ -87,8 +94,6 @@ function updateMatrix(element, actualPosition,
   emptyPosition){
    matrix[actualPosition[0]][actualPosition[1]] = ''
    matrix[emptyPosition[0]][emptyPosition[1]] = element
-
-   console.log(matrix)
 }
 
 function shuffleMatrix(){
@@ -119,3 +124,23 @@ function shuffleMatrix(){
    return shuffleMatrix
 }
 
+function compareMatrix(){
+  let counter = 0;
+  let finalMatrix = [
+    ['1','2','3'],
+    ['4','5','6'],
+    ['7','8',''],
+  ]
+  matrix.forEach((row, indexRow) => {
+    row.forEach((element, indexColumn) =>{
+      if(element == finalMatrix[indexRow][indexColumn]){
+        counter++
+      }
+    })
+  })
+  if (counter == 9){
+    return true
+  }else{
+    return false
+  }
+}
