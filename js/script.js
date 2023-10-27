@@ -34,7 +34,15 @@ function addEventListeners(){
 
     if (movement !== false){
       updateMatrix(token.innerText, actualPosition, emptyPosition)
+      
       let result = compareMatrix()
+
+      if(result == true){
+        confetti({
+          particleCount: 150,
+          spread: 180
+        });
+      }
       
       drawTokens()
       addEventListeners()
