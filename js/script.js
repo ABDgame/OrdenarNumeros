@@ -37,7 +37,7 @@ function addEventListeners(){
       
       let result = compareMatrix()
 
-      if(result == true){
+      if(result === true){
         confetti({
           particleCount: 150,
           spread: 180
