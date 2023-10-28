@@ -5,9 +5,16 @@
   padding: 0;
   box-sizing: border-box;  
 }
+:root{
+  --tokens:#f3ea60;
+  --tokenShadow:#b96453;
+  --tokenText:#754d26;
+}
+
 body
 {
   font-family: 'Poppins';
+  color:var(--tokenText);
   background: url("BACKGROUND.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -16,7 +23,6 @@ body
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  
 }
 .board
 {
@@ -29,7 +35,7 @@ body
 }
 .token
 {
-  background-color: #f3ea60;
+  background-color: var(--tokens);
   width: 100px;
   height: 100px;
   display: flex;
@@ -38,5 +44,5 @@ body
   font-size: 40px;
   cursor: pointer;
   border-radius: 4px;
-  box-shadow: 3px 3px #b96453;
+  box-shadow: 3px 3px var(--tokenShadow);
 }
