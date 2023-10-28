@@ -25,3 +25,9 @@ Código Fonte by @CodingTube
 [ X ] 11 - https://www.youtube.com/watch?v=qxXEqS0N2X8&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=11
 #
 [ X ] 12 - https://www.youtube.com/watch?v=ukvoZSqDsCQ&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=12
+#
+[ X ] 13 - https://www.youtube.com/watch?v=CnYlbvM-dQI&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=13
+#
+[ X ] 14 - https://www.youtube.com/watch?v=7648RPcWh8k&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=14
+#
+[ X ] 15 - https://www.youtube.com/watch?v=jqsPaXt_jLQ&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=15
