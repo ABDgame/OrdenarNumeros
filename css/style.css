@@ -9,6 +9,9 @@
   --tokens:#f3ea60;
   --tokenShadow:#b96453;
   --tokenText:#754d26;
+  --btnBackground:#3edaf1;
+  --btnShadow:#0885da;
+  --btnText:#135fb5;
 }
 
 body
@@ -45,4 +48,43 @@ body
   cursor: pointer;
   border-radius: 4px;
   box-shadow: 3px 3px var(--tokenShadow);
+}
+/*BATALHA INICIAL*/
+.first-screen{
+  text-align: center;
+}
+.first-screen p{
+  font-weight: bold;
+  font-size: 32px;
+}
+.first-screen img{
+  width: 300px;
+}
+
+/*BOTÃO COMEÇAR*/
+.startBtn-container{
+  position: relative;
+  width: 280px;
+  margin: 0 auto 300px;
+}
+.play-btn{
+  width: 200px;
+  height: 60px;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--btnBackground);
+  color: var(--btnText);
+  border: none;
+  position: absolute;
+  top:0; 
+}
+.btn-shadow{
+  width: 200px;
+  height: 60px;
+  background-color: var(--btnShadow);
+  border-radius: 8px;
+  position: absolute;
+  top: 4px;
+  z-index: -1;
 }
