@@ -31,3 +31,5 @@ Código Fonte by @CodingTube
 [ X ] 14 - https://www.youtube.com/watch?v=7648RPcWh8k&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=14
 #
 [ X ] 15 - https://www.youtube.com/watch?v=jqsPaXt_jLQ&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=15
+#
+[  ] 16 - https://www.youtube.com/watch?v=96BrqgAsNIQ&list=PLJubkp8BnTJvdLT0K7lPfYeIyqGGD0eIZ&index=16
