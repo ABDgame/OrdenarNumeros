@@ -7,8 +7,8 @@ let matrix = shuffleMatrix()
 
 let board = document.querySelector('.board');
 
-drawTokens()
-addEventListeners()
+//drawTokens()
+//addEventListeners()
 
 
 function drawTokens(){
