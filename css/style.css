@@ -70,7 +70,7 @@ body
 .play-btn{
   width: 200px;
   height: 60px;
-  font-size: 18px;
+  font-size: 30px;
   border-radius: 8px;
   cursor: pointer;
   background-color: var(--btnBackground);
@@ -78,6 +78,7 @@ body
   border: none;
   position: absolute;
   top:0; 
+  font-family: 'Poppins';
 }
 .btn-shadow{
   width: 200px;
