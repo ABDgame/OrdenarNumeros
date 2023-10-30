@@ -6,9 +6,24 @@ let matrix = shuffleMatrix()
  // ]
 
 let board = document.querySelector('.board');
+let startBtn = document.querySelector('#start');
+let firstScreen = document.querySelector('.first-screen');
+let startBtnContainer = document.querySelector('.startBtn-container');
 
-//drawTokens()
-//addEventListeners()
+// Animação de botões
+startBtn.addEventListener('mousedown', ()=>{
+  startBtn.style.top = '4px';
+})
+startBtn.addEventListener('mouseup', ()=>{
+  startBtn.style.top = '0px';
+})
+startBtn.addEventListener('click', ()=>{
+ firstScreen.style.display = 'none'
+ startBtnContainer.style.display = 'none'
+
+
+drawTokens()
+addEventListeners()
 
 
 function drawTokens(){
