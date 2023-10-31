@@ -17,11 +17,11 @@ startBtn.addEventListener('mousedown', ()=>{
 startBtn.addEventListener('mouseup', ()=>{
   startBtn.style.top = '0px';
 })
+// BOTÃO JOGAR NOVAMENTE
 startBtn.addEventListener('click', ()=>{
- firstScreen.style.display = 'none'
- startBtnContainer.style.display = 'none'
-
-
+ firstScreen.style.display = 'none';
+ startBtnContainer.style.display = 'none';
+ matrix = shuffleMatrix()
 drawTokens()
 addEventListeners()
 
@@ -53,6 +53,10 @@ function addEventListeners(){
       let result = compareMatrix()
 
       if(result === true){
+
+        startBtnContainer.style.display = 'block';
+        startBtn.innerText = "JOGAR NOVAMENTE";
+        
         confetti({
           particleCount: 3000,
           spread: 180
