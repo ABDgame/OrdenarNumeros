@@ -1,14 +1,17 @@
-let matrix = shuffleMatrix()
-  //let matrix = [
-   // ['1','2','3'],
-   // ['4','5','6'],
-  // ['7','','8'],
- // ]
+//let matrix = shuffleMatrix()
+  let matrix = [
+    ['1','2','3'],
+    ['4','5','6'],
+    ['7','','8'],
+]
 
 let board = document.querySelector('.board');
 let startBtn = document.querySelector('#start');
 let firstScreen = document.querySelector('.first-screen');
 let startBtnContainer = document.querySelector('.startBtn-container');
+let counterElement = document.querySelector('.counter');
+let counter = 6;
+
 
 // Animação de botões
 startBtn.addEventListener('mousedown', ()=>{
@@ -17,14 +20,34 @@ startBtn.addEventListener('mousedown', ()=>{
 startBtn.addEventListener('mouseup', ()=>{
   startBtn.style.top = '0px';
 })
-// BOTÃO JOGAR NOVAMENTE
+
+// CONTADOR
+let counterId = setInterval(()=>{
+  counter--
+
+  if(counter === 0) {
+    clearInterval(counterId)
+    counterElement.style.display = 'none'
+    board.innerHTML ='<p class="game-over"> ACABOU O TEMPO </p>'
+  }else{
+    counterElement.innerText = counter;
+  }
+}, 1000)
+
+// BOTÃO JOGAR DE NOVO
 startBtn.addEventListener('click', ()=>{
- firstScreen.style.display = 'none';
  startBtnContainer.style.display = 'none';
- matrix = shuffleMatrix()
+ firstScreen.style.display = 'none';
+ counterElement.style.display = 'block';
+ // matriz = = shuffleMatrix()
+ matrix = [
+    ['1','2','3'],
+    ['4','5','6'],
+    ['7','','8'],
+]
 drawTokens()
 addEventListeners()
-
+})
 
 function drawTokens(){
   board.innerHTML = '';
@@ -36,8 +59,6 @@ function drawTokens(){
     } 
   }))
 }
-
-
 
 function addEventListeners(){
   let tokens = document.querySelectorAll('.token')
@@ -55,11 +76,10 @@ function addEventListeners(){
       if(result === true){
 
         startBtnContainer.style.display = 'block';
-        startBtn.innerText = "JOGAR NOVAMENTE";
-        
+        startBtn.innerText = "JOGAR";
         confetti({
           particleCount: 3000,
-          spread: 180
+          spread: 100
         });
       }
       
@@ -74,8 +94,7 @@ function searchPosition(element){
   let rowIndex = 0;
   let columIndex = 0;
   matrix.forEach((row, index) => {
-     let rowElement = row.findIndex(item =>
-     item == element)
+     let rowElement = row.findIndex(item => item == element)
      if(rowElement !== -1){
        rowIndex = index;
        columIndex = rowElement;
@@ -88,8 +107,7 @@ function canItMove(actualPosition, emptyPosition){
 
   if(actualPosition[1]== emptyPosition[1]){
 
-    if(actualPosition[0]-emptyPosition[0] > 1 ||
-      actualPosition[0]-emptyPosition[0] <-1){
+    if(actualPosition[0]-emptyPosition[0] > 1 || actualPosition[0]-emptyPosition[0] <-1){
         return false
     }
     //if(actualPosition[0]-emptyPosition[0] ==-1){
