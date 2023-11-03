@@ -17,15 +17,8 @@
 body
 {
   font-family: 'Poppins';
+  background-color: var(--background);
   color:var(--tokenText);
-  background: url("BACKGROUND.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 .board
 {
@@ -34,7 +27,7 @@ body
   grid-template-columns: 1fr 1fr 1fr;
   gap: 4px;
   width: 310px;
-  margin: 120px auto 30px;
+  margin: 20px auto 30px;
 }
 .token
 {
@@ -70,7 +63,7 @@ body
 .play-btn{
   width: 200px;
   height: 60px;
-  font-size: 21px;
+  font-size: 30px;
   border-radius: 8px;
   cursor: pointer;
   background-color: var(--btnBackground);
@@ -88,4 +81,13 @@ body
   position: absolute;
   top: 4px;
   z-index: -1;
+}
+/*CONTADOR = COUNTER*/
+.counter-container{
+  text-align: center;
+  font-size: 40px;
+  margin-top: 60px;
+}
+.counter{
+  display: none;
 }
