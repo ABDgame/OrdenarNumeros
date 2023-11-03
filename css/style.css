@@ -9,6 +9,7 @@
   --tokens:#f3ea60;
   --tokenShadow:#b96453;
   --tokenText:#754d26;
+  --background: #da7ff2;
   --btnBackground:#3edaf1;
   --btnShadow:#0885da;
   --btnText:#135fb5;
@@ -90,4 +91,11 @@ body
 }
 .counter{
   display: none;
+}
+/*TEXTO GAME OVER*/
+.game-over{
+  font-size: 48px;
+  width: 300px;
+  text-align: center;
+  margin: 60px 0px;
 }
