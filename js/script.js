@@ -1,16 +1,17 @@
-//let matrix = shuffleMatrix()
-  let matrix = [
-    ['1','2','3'],
-    ['4','5','6'],
-    ['7','','8'],
-]
+let matrix = shuffleMatrix()
+//  let matrix = [
+//    ['1','2','3'],
+//    ['4','5','6'],
+//    ['7','','8'],
+//]
 
 let board = document.querySelector('.board');
 let startBtn = document.querySelector('#start');
 let firstScreen = document.querySelector('.first-screen');
 let startBtnContainer = document.querySelector('.startBtn-container');
 let counterElement = document.querySelector('.counter');
-let counter = 6;
+let counter = 60;
+let playerWin = false;
 
 
 // Animação de botões
@@ -21,32 +22,23 @@ startBtn.addEventListener('mouseup', ()=>{
   startBtn.style.top = '0px';
 })
 
-// CONTADOR
-let counterId = setInterval(()=>{
-  counter--
-
-  if(counter === 0) {
-    clearInterval(counterId)
-    counterElement.style.display = 'none'
-    board.innerHTML ='<p class="game-over"> ACABOU O TEMPO </p>'
-  }else{
-    counterElement.innerText = counter;
-  }
-}, 1000)
 
 // BOTÃO JOGAR DE NOVO
 startBtn.addEventListener('click', ()=>{
  startBtnContainer.style.display = 'none';
  firstScreen.style.display = 'none';
  counterElement.style.display = 'block';
- // matriz = = shuffleMatrix()
- matrix = [
-    ['1','2','3'],
-    ['4','5','6'],
-    ['7','','8'],
-]
-drawTokens()
-addEventListeners()
+ matriz = shuffleMatrix()
+ //  let matrix = [
+//    ['1','2','3'],
+//    ['4','5','6'],
+//    ['7','','8'],
+//]
+ drawTokens();
+ counter = 60;
+ playerWin = false;
+ startCounter();
+ addEventListeners();
 })
 
 function drawTokens(){
@@ -74,12 +66,12 @@ function addEventListeners(){
       let result = compareMatrix()
 
       if(result === true){
-
+        playerWin = true;
         startBtnContainer.style.display = 'block';
         startBtn.innerText = "JOGAR";
         confetti({
           particleCount: 3000,
-          spread: 100
+          spread: 180
         });
       }
       
@@ -163,8 +155,7 @@ function shuffleMatrix(){
      }else{
        column = 0
        row++
-     }
-         
+     }     
    })
    return shuffleMatrix
 }
@@ -188,4 +179,27 @@ function compareMatrix(){
   }else{
     return false
   }
+}
+
+// CONTADOR
+function startCounter(){
+  counterElement.innerText = counter;
+  let counterId = setInterval(()=>{
+  counter--
+
+  if(counter <= 0) {
+    clearInterval(counterId);
+    counterElement.style.display = 'none';
+    board.innerHTML ='<p class="game-over"> ACABOU O TEMPO </p>'
+    startBtnContainer.style.display = 'block';
+    startBtn.innerText = "JOGAR";
+  }else{
+    counterElement.innerText = counter;
+  }
+
+  if(playerWin == true){
+    clearInterval(counterId);
+  }
+
+}, 1000)
 }
